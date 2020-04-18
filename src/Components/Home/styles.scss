@@ -1,0 +1,220 @@
+// todo:
+// Use media queries to set $max
+// Width needs some kind of gutter...
+
+$starFieldWidth: 2560;
+$starFieldHeight: 2000;
+$starStartOffset: 600px;
+
+$starOneScrollDuration: 75s;
+$starTwoScrollDuration: 125s;
+$starThreeScrollDuration: 175s;
+$numStarOneStars: 1700;
+$numStarTwoStars: 700;
+$numStarThreeStars: 200;
+
+$width: 100%;
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100vh;
+	margin: 0;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background: linear-gradient(
+		to bottom,
+		#020107 0%,
+		#311b46 50%,
+		#592c67 60%,
+		#803e7e 75%,
+		#ca759c 90%,
+		#ec9d9d 95%,
+		#c35e4d 100%
+	);
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.title {
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 70px;
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	top: 20%;
+
+	color: white;
+	letter-spacing: 0.3em;
+
+	/* Smooth our font */
+
+	text-shadow: 1px 2px 1px rgba(black, 0.2);
+	-webkit-font-smoothing: antialiased;
+
+	z-index: 100;
+	margin: 0;
+	padding: 0;
+}
+.userName {
+	font-weight: bold;
+	font-size: 50px;
+	// line-height: 284px;
+	text-align: center;
+	// position: absolute;
+	// width: 100%;
+	// top: 20%;
+
+	color: white;
+	letter-spacing: 0.2em;
+
+	/* Smooth our font */
+
+	text-shadow: 1px 2px 1px rgba(black, 0.2);
+	-webkit-font-smoothing: antialiased;
+
+	z-index: 100;
+	margin: 0;
+	padding: 0;
+}
+.mountains {
+	position: absolute;
+	width: $width;
+	height: 40%;
+	bottom: 0;
+	z-index: 20;
+	overflow: hidden;
+
+	svg {
+		position: absolute;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.night-sky {
+	position: relative;
+	height: 100%;
+	//height: 100vh;
+	margin: 0;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background: linear-gradient(
+		to bottom,
+		#020107 0%,
+		#311b46 50%,
+		#592c67 60%,
+		#803e7e 75%,
+		#ca759c 90%,
+		#ec9d9d 95%,
+		#c35e4d 100%
+	);
+	&:before {
+		height: 100%;
+		width: 100%;
+		content: ' ';
+		position: absolute;
+		top: 0;
+		/* http://bg.siteorigin.com/ */
+		background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/424395/night-sky-texture.png');
+		opacity: 0.1;
+	}
+}
+
+.work1 {
+	color: white;
+	display: flex;
+	/* top: 30%; */
+	margin-top: 12%;
+	/* z-index: -1; */
+	justify-content: center;
+	align-items: center;
+	// position: absolute;
+	width: 100%;
+}
+.work2 {
+	left: 10;
+	color: white;
+	display: flex;
+	/* top: 30%; */
+	margin-top: 14%;
+	/* z-index: -1; */
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 100%;
+}
+
+// n is number of stars required
+@function multiple-box-shadow($n) {
+	// First star
+	$stars: '#{random($starFieldWidth)}px #{random($starFieldHeight)}px #FFF';
+
+	@for $i from 2 through $n {
+		// Iterate through and append stars to string
+		$stars: '#{$stars} , #{random($starFieldWidth)}px #{random($starFieldHeight)}px #FFF';
+	}
+
+	// Return all generated stars
+	@return unquote($stars);
+}
+
+@mixin star-template($numStars, $starSize, $scrollSpeed) {
+	z-index: 10;
+	width: $starSize;
+	height: $starSize;
+	background: transparent;
+	box-shadow: multiple-box-shadow($numStars);
+	animation: animStar $scrollSpeed linear infinite;
+
+	&:after {
+		content: ' ';
+		top: -$starStartOffset;
+		width: $starSize;
+		height: $starSize;
+		position: absolute;
+		background: transparent;
+		box-shadow: multiple-box-shadow($numStars);
+	}
+}
+
+.stars {
+	@include star-template($numStarOneStars, 1px, $starOneScrollDuration);
+}
+.stars2 {
+	@include star-template($numStarTwoStars, 2px, $starTwoScrollDuration);
+}
+.stars3 {
+	@include star-template($numStarThreeStars, 3px, $starThreeScrollDuration);
+}
+
+@keyframes animStar {
+	from {
+		transform: translateY(0px);
+	}
+	to {
+		transform: translateY(-#{$starFieldHeight}px);
+	}
+}
+
+// /* Adjust title */
+// @media (max-width: 1000px) {
+// 	.title {
+// 		font-size: 20px;
+// 	}
+// }
+
+@media (max-width: 600px) {
+	.title {
+		font-size: 15px;
+	}
+}

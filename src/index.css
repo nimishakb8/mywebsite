@@ -1,13 +1,32 @@
+@font-face {
+	font-family: 'PT Mono';
+	src: url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: 'PT Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+		'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	height: 100%;
+	margin: 0;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background: linear-gradient(
+		to bottom,
+		#020107 0%,
+		#311b46 50%,
+		#592c67 60%,
+		#803e7e 75%,
+		#ca759c 90%,
+		#ec9d9d 95%,
+		#c35e4d 100%
+	);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: 'PT Mono', source-code-pro, Menlo, Monaco, Consolas,
+		'Courier New', monospace, 'Fredericka the Great', cursive;
 }
