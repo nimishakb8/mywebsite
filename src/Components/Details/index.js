@@ -26,34 +26,45 @@ function Details() {
 		<div className="details-container">
 			<div className="details-wrapper">
 				<h2 className="userName">Nimisha K B</h2>
-				<div className="work-text">
+				{/* <div className="work-text">
 					<BriefcaseIcon className="briefcase-icon" />
 					<span className="work-text">Sr. Software Engineer at EY</span>
 				</div>
 				<div className="work-text">
 					<BriefcaseIcon className="briefcase-icon" />
 					<span className="work-text">Software Engineer at Tech Mahindra</span>
-				</div>
+				</div> */}
 
 				<div className="polaroid-container">
 					<img className="avatar-img" src={img} alt="Nimisha K B" />
 					<section className="text-area">
 						{/* <img className="locationIcon" src={loc} alt="Norther Lights" /> */}
-						<LocationIcon className="locationIcon" />
-						<span className="loc">Bangalore,India</span>
+						<div>
+							<LocationIcon className="locationIcon" />
+							<span className="loc">Bangalore,India</span>
+						</div>
+
+						<div className="work-text">
+							<BriefcaseIcon className="briefcase-icon" />
+							<span className="work-text">Ernst & Young(EY)</span>
+						</div>
+						<div className="work-text">
+							<BriefcaseIcon className="briefcase-icon" />
+							<span className="work-text">Tech Mahindra</span>
+						</div>
 					</section>
 				</div>
 				<div>
 					<div className="contact-icons-container">
 						{/* <img src={linkdnIcon} alt="mail box icon" className="linkedin-icon" /> */}
-						<LinkedinIcon className="mail-icon" onClick={goToLinkedin} />
+						<LinkedinIcon className="linkedin-icon" onClick={goToLinkedin} />
 						<MailIcon className="mail-icon" onClick={goToMail} />
-						<img
+						<GithubIcon className="github-icon" onClick={goToGitHub} />
+						{/* <img
 							src={github}
 							alt="mail box icon"
-							className="github-icon"
-							onClick={goToGitHub}
-						/>
+						
+						/> */}
 					</div>
 				</div>
 			</div>
