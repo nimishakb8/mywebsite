@@ -111,6 +111,10 @@
 	cursor: pointer;
 	color: white;
 }
+.linkedin-icon:hover {
+	-ms-transform: scale(1.1, 1.1); /* IE 9 */
+	transform: scale(1.1, 1.1); /* Standard syntax */
+}
 .mail-icon:hover {
 	-ms-transform: scale(1.1, 1.1); /* IE 9 */
 	transform: scale(1.1, 1.1); /* Standard syntax */
