@@ -56,8 +56,10 @@
 
 	display: flex;
 }
-.location-container {
+.location {
 	display: flex;
+	align-items: center;
+	justify-content: flex-start;
 }
 .locationIcon {
 	width: 20px;

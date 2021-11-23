@@ -39,9 +39,13 @@ function Details() {
 					<img className="avatar-img" src={img} alt="Nimisha K B" />
 					<section className="text-area">
 						{/* <img className="locationIcon" src={loc} alt="Norther Lights" /> */}
-						<div>
+						<div className="location">
 							<LocationIcon className="locationIcon" />
 							<span className="loc">Bangalore,India</span>
+						</div>
+						<div className="work-text">
+							<BriefcaseIcon className="briefcase-icon" />
+							<span className="work-text">Unisys</span>
 						</div>
 
 						<div className="work-text">

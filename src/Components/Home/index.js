@@ -71,7 +71,7 @@ function Home() {
 				</svg>
 			</div>
 			<div>
-				<h1 className="title">SENIOR UI DEVELOPER</h1>
+				<h1 className="title">SENIOR FRONTEND ENGINEER</h1>
 				<Details />
 			</div>
 
