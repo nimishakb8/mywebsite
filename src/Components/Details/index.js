@@ -1,8 +1,6 @@
 import React from 'react';
 import img from '../../assets/images/Nimisha.jpeg';
 
-import github from '../../assets/images/github.png';
-
 import { ReactComponent as BriefcaseIcon } from '../../assets/images/briefcase-outline.svg';
 import { ReactComponent as LocationIcon } from '../../assets/images/location-outline.svg';
 import { ReactComponent as GithubIcon } from '../../assets/images/logo-github.svg';
